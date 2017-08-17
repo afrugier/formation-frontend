@@ -21,13 +21,14 @@ console.log("auMoinsUneVilleAvecUnTiret ==",
 
 console.log("villesSansTiretSansEspace ==",
     villes.filter(function(elements){
-        return elements.indexOf(" ")<=0 & elements.indexOf("-")<=0;
+        return elements.indexOf(" ")<=0 && elements.indexOf("-")<=0;
     })
 );
 
 console.log("villesMajusculeSeTerminantParS ==",
     villes.filter(function(elements){
-        return elements.substring(elements.length - 1).indexOf("s")>=0;
+        //return elements.substring(elements.length - 1).indexOf("s")>=0;
+        return elements.slice(-1) === "s";
     })
     .map(function(elements){
         return elements.toUpperCase();
