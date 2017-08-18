@@ -1,5 +1,6 @@
 var path = require('path');
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     // définition des points d'entrée
@@ -10,6 +11,7 @@ module.exports = {
         filename: "bundle.js"
     },
     plugins: [
-        new UglifyJSPlugin()
+        new UglifyJSPlugin(),
+        new HtmlWebpackPlugin()
     ]
 }
