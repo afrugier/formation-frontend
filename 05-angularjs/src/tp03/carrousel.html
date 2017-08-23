@@ -1,11 +1,11 @@
 <section id="tp03">
     <h1>TP 03 - Carrousel d'images</h1>
-    <div ng-controller="CarrouselCtrl">
+    <div ng-controller="CarrouselCtrl as crtl">
 
-        <button type="button" ng-click="previous()"><<</button>
-        <button type="button" ng-click="next()">>></button>
+        <button type="button" ng-click="crtl.previous()"><<</button>
+        <button type="button" ng-click="crtl.next()">>></button>
 
         <br/>
-        <img ng-src='{{images[currentId].url}}' />
+        <img ng-src='{{crtl.images[crtl.currentId].url}}' style="height: 331px">
     </div>
 </section>
