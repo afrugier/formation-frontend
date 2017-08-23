@@ -2,7 +2,7 @@
     <h1>TP 01 - Prise en main</h1>
     <!-- TODO ici, bientôt une expérimentation des expressions AngularJS -->
 
-    <p>{{ 1 + 3 }}</p>
+    <p ng-bind="'1+3 = ' + (1+3)"></p>
     <h1>Bonjour {{'tout' + ' le' + ' monde'}}</h1>
     Saisir votre nom <input ng-model="votreNom">
     <h1>Bonjour {{votreNom}}</h1>
