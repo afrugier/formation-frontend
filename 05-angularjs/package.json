@@ -24,5 +24,8 @@
     "webpack": "^3.5.5",
     "webpack-dev-server": "^2.7.1",
     "json-server": "^0.12.0"
+  },
+  "dependencies": {
+    "angular": "^1.6.4"
   }
 }
