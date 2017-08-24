@@ -1,0 +1,19 @@
+<section id="tp06">
+    <h1>TP 06 - Communication avec $resource</h1>
+    <div ng-controller="tripListDetailCtrl as ctrl">
+        <div ng-repeat="item in ctrl.data">
+            <ul>
+                <li>
+                    {{item.name}} - <strong>{{item.price}}</strong><br/>
+                    <img ng-model="show" ng-init="show = false" ng-click="show = !show" ng-src="{{item.imageUrl}}" style="width: 100px"><br/>
+                    <div ng-show="show == true">
+                        <form name="newFeed" novalidate>
+                            <textarea ng-model="item.description" rows="5" cols="50"></textarea><br/>
+                            <button ng-click="ctrl.save(item)" ng-disabled="!newFeed.$dirty">Update</button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

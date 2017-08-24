@@ -1,0 +1,13 @@
+<section id="tp05">
+    <h1>TP 05 - Communication avec $http</h1>
+    <div ng-controller="tripListCtrl as ctrl">
+        <div ng-repeat="item in ctrl.data">
+            <form name="newFeed" novalidate>
+                <input type="text" ng-model="item.name" /> -
+                <input type="text" ng-model="item.price" />
+                <button ng-click="ctrl.save(item)" ng-disabled="!newFeed.$dirty">Save</button>
+                <img ng-src="{{item.imageUrl}}" style="width: 100px">
+            </form>
+        </div>
+    </div>
+</section>
