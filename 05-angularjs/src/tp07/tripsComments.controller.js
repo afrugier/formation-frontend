@@ -17,14 +17,20 @@ export default class tripListCommentsCtrl {
                 this.stepsTrouves = steps
             })
 
-        this.commentsService.findByTripId(this.choix)
-            .then(comments => {
-                this.commentsTrouves = comments
-            })
+        this.findComment()
     }
 
     save() {
-        this.commentsService.addComment(this.commentInput, this.choix);
+        this.commentsService.addComment(this.commentInput, this.choix)
+            .then(r => this.findComment())
+
+    }
+
+    findComment() {
+        this.commentsService.findByTripId(this.choix)
+            .then(comments => {
+                this.commentsTrouves =  comments
+            })
     }
 
 }

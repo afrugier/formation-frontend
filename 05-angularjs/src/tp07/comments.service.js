@@ -14,8 +14,7 @@ class CommentsService {
 
     addComment(tripComment, tripId) {
         let fullTrip;
-
-        this.$http.get(this.apiUrl.full + "/" + tripId)
+        return this.$http.get(this.apiUrl.full + "/" + tripId)
             .then(response => {
                 fullTrip = response.data;
                 if (!fullTrip.comments) {
@@ -29,12 +28,8 @@ class CommentsService {
                         "text": tripComment
                     })
                 }
-
-                this.$http.put(this.apiUrl.full + "/" + fullTrip.id, fullTrip)
+                return this.$http.put(this.apiUrl.full + "/" + fullTrip.id, fullTrip)
                     .then(alert("l'enregistrement du commentaire pour le voyage " + fullTrip.name + " a été un succés"));
-
-
-
             }, response => { });
 
     }
