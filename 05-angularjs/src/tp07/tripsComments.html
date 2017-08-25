@@ -1,0 +1,23 @@
+<section id="tp07">
+    <h1>TP 07 - Services</h1>
+    <div ng-controller="tripListCommentsCtrl as ctrl">
+
+        <select ng-model="ctrl.choix" ng-change="ctrl.infos()">
+            <option ng-repeat="item in ctrl.tripList" value="{{item.id}}" >{{item.name}}</option>
+        </select><br/><br/>
+
+        <img ng-repeat="item in ctrl.stepsTrouves" ng-src="{{item.imageUrl}}" style="width: 200px">
+
+        <div ng-show="ctrl.choix">
+            <ul>
+                <li ng-repeat="item in ctrl.commentsTrouves">{{item.id}} : {{item.text}}</li>
+            </ul>
+
+            <form name="newFeed" novalidate>
+                <textarea ng-model="ctrl.commentInput" cols="50" rows="1"></textarea><br/>
+                <button ng-click="ctrl.save()">Update</button>
+            </form>
+        </div>
+
+    </div>
+</section>
