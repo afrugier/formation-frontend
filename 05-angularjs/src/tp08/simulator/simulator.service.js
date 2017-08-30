@@ -18,6 +18,7 @@ export default class SimulatorService {
             });
 
             if (this.walkers.find(w => w.progress >= 100)) {
+                w.progress = 100
                 this.$interval.cancel(stopTime);
             }
 

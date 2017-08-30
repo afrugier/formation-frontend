@@ -21,18 +21,22 @@ import formsCtrl from './tp04/forms.controller'
 import tripsListCtrl from './tp05/tripsList.controller'
 import tripListDetailCtrl from './tp06/tripsListDetails.controller'
 import tripListCommentsCtrl from './tp07/tripsComments.controller'
+import PizzaCtrl from './tp-unit-tests/pizza.controller'
 
 // récupération de la page css
 import css from './tp04/forms.css'
 import "bootstrap/dist/css/bootstrap.css"
 import 'bootstrap'
 
-
 // récupération de la page service.js
 import tripService from './tp07/trips.service'
 import commentsService from './tp07/comments.service'
 import Stepsservice from './tp07/steps.service'
 import apiUrl from './tp07/apiUrls.service'
+import PizzaService from './tp-unit-tests/pizza.service'
+import PizzaRemoteService from "./tp-unit-tests/pizza.remote.service";
+
+import PizzaComponent from './tp-unit-tests/pizza.component'
 
 // insertion du code HTML dans le corps de la page principale
 // document.querySelector('body').innerHTML = [tplTp01, tplTp02, tplTp03, tplTp04, tplTp05, tplTp06, tplTp07, tplTp08].join('<hr>')
@@ -44,7 +48,16 @@ angular.module('tripApp', ['ngResource', simModule.name , raceModule.name])
     .controller(tripsListCtrl.name, tripsListCtrl)
     .controller(tripListDetailCtrl.name, tripListDetailCtrl)
     .controller(tripListCommentsCtrl.name, tripListCommentsCtrl)
+    .controller(PizzaCtrl.name, PizzaCtrl)
+
     .constant('apiUrl', apiUrl)
+
     .service(tripService.name, tripService)
-    .factory(commentsService.name, commentsService)
+    .service(PizzaService.name, PizzaService)
     .service(Stepsservice.name, Stepsservice)
+    .service(PizzaRemoteService.name, PizzaRemoteService)
+
+    .factory(commentsService.name, commentsService)
+
+    .component('pizCmp', PizzaComponent)
+    
